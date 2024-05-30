@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BackEnd
-build_property.ProjectDir = C:\Users\leoro\OneDrive\Bureau\Cours\S2\SAE\Réseau\Logiciel\BackEnd\
+build_property.ProjectDir = C:\Users\leoro\OneDrive\Bureau\Cours\S2\SAE\SAE-2.3\SAE-2.3\Réseau\Logiciel\BackEnd\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\leoro\\OneDrive\\Bureau\\Cours\\S2\\SAE\\Réseau\\Logiciel\\FrontEnd\\FrontEnd.csproj": {}
+    "C:\\Users\\leoro\\OneDrive\\Bureau\\Cours\\S2\\SAE\\SAE-2.3\\SAE-2.3\\Réseau\\Logiciel\\FrontEnd\\FrontEnd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\leoro\\OneDrive\\Bureau\\Cours\\S2\\SAE\\Réseau\\Logiciel\\FrontEnd\\FrontEnd.csproj": {
+    "C:\\Users\\leoro\\OneDrive\\Bureau\\Cours\\S2\\SAE\\SAE-2.3\\SAE-2.3\\Réseau\\Logiciel\\FrontEnd\\FrontEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\leoro\\OneDrive\\Bureau\\Cours\\S2\\SAE\\Réseau\\Logiciel\\FrontEnd\\FrontEnd.csproj",
+        "projectUniqueName": "C:\\Users\\leoro\\OneDrive\\Bureau\\Cours\\S2\\SAE\\SAE-2.3\\SAE-2.3\\Réseau\\Logiciel\\FrontEnd\\FrontEnd.csproj",
         "projectName": "FrontEnd",
-        "projectPath": "C:\\Users\\leoro\\OneDrive\\Bureau\\Cours\\S2\\SAE\\Réseau\\Logiciel\\FrontEnd\\FrontEnd.csproj",
+        "projectPath": "C:\\Users\\leoro\\OneDrive\\Bureau\\Cours\\S2\\SAE\\SAE-2.3\\SAE-2.3\\Réseau\\Logiciel\\FrontEnd\\FrontEnd.csproj",
         "packagesPath": "C:\\Users\\leoro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\leoro\\OneDrive\\Bureau\\Cours\\S2\\SAE\\Réseau\\Logiciel\\FrontEnd\\obj\\",
+        "outputPath": "C:\\Users\\leoro\\OneDrive\\Bureau\\Cours\\S2\\SAE\\SAE-2.3\\SAE-2.3\\Réseau\\Logiciel\\FrontEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\leoro\\AppData\\Roaming\\NuGet\\NuGet.Config",
