@@ -7,7 +7,7 @@
         public uint adrOctet2;
         public uint adrOctet3;
         public uint adrOctet4;
-        public uint[] adressebin;
+        public string[] adressebin;
         public string adrBinaire1;
         public string adrBinaire2;
         public string adrBinaire3;
@@ -23,27 +23,17 @@
         public uint msqOctet2;
         public uint msqOctet3;
         public uint msqOctet4;
-        public uint[] masquebin;
+        public string[] masquebin;
         public string msqBinaire1;
         public string msqBinaire2;
         public string msqBinaire3;
         public string msqBinaire4;
-        public uint CIDR = 24;
+        public uint CIDR = 0;
 
         public char Classe;
 
         public uint[] net;
-        public uint netOctet1;
-        public uint netOctet2;
-        public uint netOctet3;
-        public uint netOctet4;
-
         public uint[] broadcast;
-        public uint broadOctet1;
-        public uint broadOctet2;
-        public uint broadOctet3;
-        public uint broadOctet4;
-
         public uint[] firstIP;
         public uint[] lastIP;
 
@@ -52,7 +42,10 @@
             uint reponse;
             string rep;
             Console.WriteLine("Notation binaire du reseau ? [1] : Oui, [2] : Non");
-            reponse = Convert.ToUInt32(Console.ReadLine());
+            while (!uint.TryParse(Console.ReadLine(), out reponse) || (reponse != 1 && reponse != 2))
+            {
+                Console.WriteLine("Erreur : Veuillez entrer 1 pour Oui ou 2 pour Non.");
+            }
             switch (reponse)
             {
                 default:
@@ -135,13 +128,17 @@
             adresse[1] = adrOctet2;
             adresse[2] = adrOctet3;
             adresse[3] = adrOctet4;
-            adressebin = new uint[NbOctet];
-            adressebin[0] = Convert.ToUInt32(adrBinaire1);
-            adressebin[1] = Convert.ToUInt32(adrBinaire2);
-            adressebin[2] = Convert.ToUInt32(adrBinaire3);
-            adressebin[3] = Convert.ToUInt32(adrBinaire4);
+            adressebin = new string[NbOctet];
+            adressebin[0] = adrBinaire1;
+            adressebin[1] = adrBinaire2;
+            adressebin[2] = adrBinaire3;
+            adressebin[3] = adrBinaire4;
+
             Console.WriteLine("Notation CIDR du masque ? [1] : Oui, [2] : Non");
-            reponse = Convert.ToUInt32(Console.ReadLine());
+            while (!uint.TryParse(Console.ReadLine(), out reponse) || (reponse != 1 && reponse != 2))
+            {
+                Console.WriteLine("Erreur : Veuillez entrer 1 pour Oui ou 2 pour Non.");
+            }
             switch (reponse)
             {
                 default:
@@ -151,7 +148,7 @@
                     CIDR = Convert.ToUInt32(Console.ReadLine());
                     ConversionCIDR(CIDR);
                     msqOctet1 = Convert.ToUInt32(msqBinaire1, 2);
-                    msqOctet2 = Convert.ToUInt32(msqBinaire1, 2);
+                    msqOctet2 = Convert.ToUInt32(msqBinaire2, 2);
                     msqOctet3 = Convert.ToUInt32(msqBinaire3, 2);
                     msqOctet4 = Convert.ToUInt32(msqBinaire4, 2);
                     break;
@@ -197,79 +194,93 @@
             masque[1] = msqOctet2;
             masque[2] = msqOctet3;
             masque[3] = msqOctet4;
-            masquebin = new uint[NbOctet];
-            masquebin[0] = Convert.ToUInt32(msqBinaire1);
-            masquebin[1] = Convert.ToUInt32(msqBinaire2);
-            masquebin[2] = Convert.ToUInt32(msqBinaire3);
-            masquebin[3] = Convert.ToUInt32(msqBinaire4);
+            masquebin = new string[NbOctet];
+            masquebin[0] = msqBinaire1;
+            masquebin[1] = msqBinaire2;
+            masquebin[2] = msqBinaire3;
+            masquebin[3] = msqBinaire4;
+            if (CIDR == 0)
+            {
+                CIDR = CalculerCIDR(masquebin);
+            }
         }
 
         public void ConversionCIDR(uint CIDR)
         {
-            string binaire = string.Empty;
-            for (int i = 0; i < NbBit; i++)
+            string binaire = new string('1', (int)CIDR).PadRight(NbBit, '0');
+            msqBinaire1 = binaire.Substring(0, 8);
+            msqBinaire2 = binaire.Substring(8, 8);
+            msqBinaire3 = binaire.Substring(16, 8);
+            msqBinaire4 = binaire.Substring(24, 8);
+        }
+
+        public uint CalculerCIDR(string[] masquebin)
+        {
+            uint cidr = 0;
+            foreach (string octet in masquebin)
             {
-                if (i<CIDR)
+                foreach (char bit in octet)
                 {
-                    binaire += "1";
+                    if (bit == '1')
+                    {
+                        cidr++;
+                    }
                 }
-                else
-                {
-                    binaire += "0"; 
-                }
             }
-            int j = 0;
-            msqBinaire1 = string.Empty;
-            msqBinaire2 = string.Empty;
-            msqBinaire3 = string.Empty;
-            msqBinaire4 = string.Empty;
-            for (int i = j; i < NbBit / 4; i++)
-            {
-                msqBinaire1 += binaire[i];
-                j++;
-            }
-            for (int i = j; i < NbBit / 2; i++)
-            {
-                msqBinaire2 += binaire[i];
-                j++;
-            }
-            for (int i = j; i < NbBit / 2 + NbBit / 4; i++)
-            {
-                msqBinaire3 += binaire[i];
-                j++;
-            }
-            for (int i = j; i < NbBit; i++)
-            {
-                msqBinaire4 += binaire[i];
-                j++;
-            }       
+            return cidr;
         }
 
         public void Calculs()
         {
             // Détermination Classe
-            if (true)
+            if (adrOctet1 >= 240)
             {
-                
+                Classe = 'E';
+            }
+            else if (adrOctet1 >= 224)
+            {
+                Classe = 'D';
+            }
+            else if (adrOctet1 >= 192)
+            {
+                Classe = 'C';
+            }
+            else if (adrOctet1 >= 128)
+            {
+                Classe = 'B';
+            }
+            else
+            {
+                Classe = 'A';
             }
 
             // Calcul adresse net
-
+            net = new uint[NbOctet];
+            for (int i = 0; i < NbOctet; i++)
+            {
+                net[i] = adresse[i] & masque[i];
+            }
 
             // Calcul adresse broadcast
-
+            broadcast = new uint[NbOctet];
+            for (int i = 0; i < NbOctet; i++)
+            {
+                broadcast[i] = adresse[i] | (~masque[i] & 0xFF);
+            }
 
             // Calcul 1ere IP machine
-
+            firstIP = (uint[])net.Clone();
+            firstIP[NbOctet - 1] += 1;
 
             // Calcul dernière IP machine
-
+            lastIP = (uint[])broadcast.Clone();
+            lastIP[NbOctet - 1] -= 1;
 
             // Calcul nombre IPs
-
+            NbIP = (int)Math.Pow(2, 32 - CIDR);
 
             // Calcul nombre machines
-
+            NbMachine = NbIP - 2; // Exclusion de l'adresse réseau et de broadcast
         }
 
         public Reseau()
@@ -280,29 +291,18 @@
 
         public void AffichageReseau()
         {
-            Console.Write("Adresse Reseau :");
-            for (int i = 0; i < NbOctet; i++)
-            {
-                Console.Write($"{adresse[i]} ");
-            }
-            Console.WriteLine();
-            Console.Write("Adresse Reseau Binaire :");
-            for (int i = 0; i < NbOctet; i++)
-            {
-                Console.Write($"{adressebin[i]} ");
-            }
-            Console.WriteLine();
-            Console.Write("Masque :");
-            for (int i = 0; i < NbOctet; i++)
-            {
-                Console.Write($"{masque[i]} ");
-            }
-            Console.WriteLine();
-            Console.Write("Masque Binaire :");
-            for (int i = 0; i < NbOctet; i++)
-            {
-                Console.Write($"{masquebin[i]} ");
-            }
+            Console.WriteLine("Adresse Reseau : " + string.Join(".", adresse));
+            Console.WriteLine("Adresse Reseau Binaire : " + string.Join(" ", adressebin));
+            Console.WriteLine("Masque : " + string.Join(".", masque));
+            Console.WriteLine("Masque Binaire : " + string.Join(" ", masquebin));
+            Console.WriteLine("Nombre CIDR : " + CIDR);
+            Console.WriteLine("Classe : " + Classe);
+            Console.WriteLine("Adresse Net : " + string.Join(".", net));
+            Console.WriteLine("Adresse Broadcast : " + string.Join(".", broadcast));
+            Console.WriteLine("Première IP : " + string.Join(".", firstIP));
+            Console.WriteLine("Dernière IP : " + string.Join(".", lastIP));
+            Console.WriteLine("Nombre d'IPs : " + NbIP);
+            Console.WriteLine("Nombre de machines : " + NbMachine);
         }
 
     }   
