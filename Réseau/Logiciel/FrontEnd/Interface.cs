@@ -5,13 +5,11 @@ namespace FrontEnd
         public Interface()
         {
             InitializeComponent();
-            lblTitre.Location = new Point((ClientSize.Width - lblTitre.Width) / 2, lblTitre.Height);
-            lblIPv4.Location = new Point((pnlSaisie.Width - lblIPv4.Width) / 2, lblIPv4.Height);
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            pnlSaisie.Location = new Point((ClientSize.Width - pnlSaisie.Width) / 2, pnlSaisie.Top);
+            lblTitre.Location = new Point((ClientSize.Width - lblTitre.Width) / 2, lblTitre.Top);
+            lblIPv4.Location = new Point((pnlSaisie.Width - lblIPv4.Width) / 2, lblIPv4.Top);
+            lblMasque.Location = new Point((pnlSaisie.Width - lblMasque.Width) / 2, lblMasque.Top);
+            btnValider.Location = new Point((pnlSaisie.Width - btnValider.Width) / 2, btnValider.Top);
         }
     }
 }

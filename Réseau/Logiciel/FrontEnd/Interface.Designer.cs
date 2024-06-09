@@ -30,23 +30,43 @@
         {
             lblTitre = new Label();
             pnlSaisie = new Panel();
-            txtBinOctet4 = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            txtBinOctet3 = new TextBox();
-            txtBinOctet2 = new TextBox();
-            label3 = new Label();
-            label4 = new Label();
-            txtBinOctet1 = new TextBox();
-            txtDecOctet4 = new TextBox();
-            lblPoint3 = new Label();
-            lblPoint2 = new Label();
-            txtDecOctet3 = new TextBox();
-            txtDecOctet2 = new TextBox();
-            lblPoint1 = new Label();
-            lblDecimal = new Label();
+            btnValider = new Button();
+            lblMasqueCIDR = new Label();
+            txtMasqueBinOctet4 = new TextBox();
+            lblMasqueBinPoint3 = new Label();
+            lblMasqueBinPoint2 = new Label();
+            txtMasqueBinOctet3 = new TextBox();
+            txtMasqueBinOctet2 = new TextBox();
+            lblMasqueBinPoint1 = new Label();
+            lblMasqueBinaire = new Label();
+            txtMasqueBinOctet1 = new TextBox();
+            txtMasqueDecOctet4 = new TextBox();
+            lblMasqueDecPoint3 = new Label();
+            lblMasqueDecPoint2 = new Label();
+            txtMasqueDecOctet3 = new TextBox();
+            txtMasqueDecOctet2 = new TextBox();
+            lblMasqueDecPoint1 = new Label();
+            lblMasqueDecimal = new Label();
+            txtMasqueDecOctet1 = new TextBox();
+            lblMasque = new Label();
+            txtMasqueCIDR = new TextBox();
+            txtIPBinOctet4 = new TextBox();
+            lblIPBinPoint3 = new Label();
+            lblIPBinPoint2 = new Label();
+            txtIPBinOctet3 = new TextBox();
+            txtIPBinOctet2 = new TextBox();
+            lblIPBinPoint1 = new Label();
+            lblIPBinaire = new Label();
+            txtIPBinOctet1 = new TextBox();
+            txtIPDecOctet4 = new TextBox();
+            lblIPDecPoint3 = new Label();
+            lblIPDecPoint2 = new Label();
+            txtIPDecOctet3 = new TextBox();
+            txtIPDecOctet2 = new TextBox();
+            lblIPDecPoint1 = new Label();
+            lblIPDecimal = new Label();
             lblIPv4 = new Label();
-            txtDecOctet1 = new TextBox();
+            txtIPDecOctet1 = new TextBox();
             pnlSaisie.SuspendLayout();
             SuspendLayout();
             // 
@@ -65,190 +85,419 @@
             // 
             pnlSaisie.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pnlSaisie.BorderStyle = BorderStyle.FixedSingle;
-            pnlSaisie.Controls.Add(txtBinOctet4);
-            pnlSaisie.Controls.Add(label1);
-            pnlSaisie.Controls.Add(label2);
-            pnlSaisie.Controls.Add(txtBinOctet3);
-            pnlSaisie.Controls.Add(txtBinOctet2);
-            pnlSaisie.Controls.Add(label3);
-            pnlSaisie.Controls.Add(label4);
-            pnlSaisie.Controls.Add(txtBinOctet1);
-            pnlSaisie.Controls.Add(txtDecOctet4);
-            pnlSaisie.Controls.Add(lblPoint3);
-            pnlSaisie.Controls.Add(lblPoint2);
-            pnlSaisie.Controls.Add(txtDecOctet3);
-            pnlSaisie.Controls.Add(txtDecOctet2);
-            pnlSaisie.Controls.Add(lblPoint1);
-            pnlSaisie.Controls.Add(lblDecimal);
+            pnlSaisie.Controls.Add(btnValider);
+            pnlSaisie.Controls.Add(lblMasqueCIDR);
+            pnlSaisie.Controls.Add(txtMasqueBinOctet4);
+            pnlSaisie.Controls.Add(lblMasqueBinPoint3);
+            pnlSaisie.Controls.Add(lblMasqueBinPoint2);
+            pnlSaisie.Controls.Add(txtMasqueBinOctet3);
+            pnlSaisie.Controls.Add(txtMasqueBinOctet2);
+            pnlSaisie.Controls.Add(lblMasqueBinPoint1);
+            pnlSaisie.Controls.Add(lblMasqueBinaire);
+            pnlSaisie.Controls.Add(txtMasqueBinOctet1);
+            pnlSaisie.Controls.Add(txtMasqueDecOctet4);
+            pnlSaisie.Controls.Add(lblMasqueDecPoint3);
+            pnlSaisie.Controls.Add(lblMasqueDecPoint2);
+            pnlSaisie.Controls.Add(txtMasqueDecOctet3);
+            pnlSaisie.Controls.Add(txtMasqueDecOctet2);
+            pnlSaisie.Controls.Add(lblMasqueDecPoint1);
+            pnlSaisie.Controls.Add(lblMasqueDecimal);
+            pnlSaisie.Controls.Add(txtMasqueDecOctet1);
+            pnlSaisie.Controls.Add(lblMasque);
+            pnlSaisie.Controls.Add(txtMasqueCIDR);
+            pnlSaisie.Controls.Add(txtIPBinOctet4);
+            pnlSaisie.Controls.Add(lblIPBinPoint3);
+            pnlSaisie.Controls.Add(lblIPBinPoint2);
+            pnlSaisie.Controls.Add(txtIPBinOctet3);
+            pnlSaisie.Controls.Add(txtIPBinOctet2);
+            pnlSaisie.Controls.Add(lblIPBinPoint1);
+            pnlSaisie.Controls.Add(lblIPBinaire);
+            pnlSaisie.Controls.Add(txtIPBinOctet1);
+            pnlSaisie.Controls.Add(txtIPDecOctet4);
+            pnlSaisie.Controls.Add(lblIPDecPoint3);
+            pnlSaisie.Controls.Add(lblIPDecPoint2);
+            pnlSaisie.Controls.Add(txtIPDecOctet3);
+            pnlSaisie.Controls.Add(txtIPDecOctet2);
+            pnlSaisie.Controls.Add(lblIPDecPoint1);
+            pnlSaisie.Controls.Add(lblIPDecimal);
             pnlSaisie.Controls.Add(lblIPv4);
-            pnlSaisie.Controls.Add(txtDecOctet1);
+            pnlSaisie.Controls.Add(txtIPDecOctet1);
             pnlSaisie.Location = new Point(50, 104);
             pnlSaisie.Name = "pnlSaisie";
-            pnlSaisie.Padding = new Padding(26, 0, 26, 0);
-            pnlSaisie.Size = new Size(500, 179);
+            pnlSaisie.Padding = new Padding(26, 20, 26, 20);
+            pnlSaisie.Size = new Size(500, 336);
             pnlSaisie.TabIndex = 1;
             // 
-            // txtBinOctet4
+            // btnValider
             // 
-            txtBinOctet4.Cursor = Cursors.IBeam;
-            txtBinOctet4.Location = new Point(389, 84);
-            txtBinOctet4.MaxLength = 8;
-            txtBinOctet4.Name = "txtBinOctet4";
-            txtBinOctet4.PlaceholderText = "octet n°4";
-            txtBinOctet4.Size = new Size(80, 23);
-            txtBinOctet4.TabIndex = 16;
+            btnValider.Location = new Point(208, 288);
+            btnValider.Name = "btnValider";
+            btnValider.Size = new Size(75, 23);
+            btnValider.TabIndex = 36;
+            btnValider.Text = "Valider";
+            btnValider.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblMasqueCIDR
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(373, 92);
-            label1.Name = "label1";
-            label1.Size = new Size(10, 15);
-            label1.TabIndex = 15;
-            label1.Text = ".";
+            lblMasqueCIDR.AutoSize = true;
+            lblMasqueCIDR.Location = new Point(21, 250);
+            lblMasqueCIDR.Name = "lblMasqueCIDR";
+            lblMasqueCIDR.Size = new Size(62, 15);
+            lblMasqueCIDR.TabIndex = 35;
+            lblMasqueCIDR.Text = "CIDR :      /";
             // 
-            // label2
+            // txtMasqueBinOctet4
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(271, 92);
-            label2.Name = "label2";
-            label2.Size = new Size(10, 15);
-            label2.TabIndex = 14;
-            label2.Text = ".";
+            txtMasqueBinOctet4.Cursor = Cursors.IBeam;
+            txtMasqueBinOctet4.Location = new Point(389, 209);
+            txtMasqueBinOctet4.Margin = new Padding(3, 0, 3, 0);
+            txtMasqueBinOctet4.MaxLength = 8;
+            txtMasqueBinOctet4.Name = "txtMasqueBinOctet4";
+            txtMasqueBinOctet4.PlaceholderText = "octet n°4";
+            txtMasqueBinOctet4.Size = new Size(80, 23);
+            txtMasqueBinOctet4.TabIndex = 34;
             // 
-            // txtBinOctet3
+            // lblMasqueBinPoint3
             // 
-            txtBinOctet3.Cursor = Cursors.IBeam;
-            txtBinOctet3.Location = new Point(287, 84);
-            txtBinOctet3.MaxLength = 8;
-            txtBinOctet3.Name = "txtBinOctet3";
-            txtBinOctet3.PlaceholderText = "octet n°3";
-            txtBinOctet3.Size = new Size(80, 23);
-            txtBinOctet3.TabIndex = 13;
+            lblMasqueBinPoint3.AutoSize = true;
+            lblMasqueBinPoint3.Location = new Point(373, 217);
+            lblMasqueBinPoint3.Name = "lblMasqueBinPoint3";
+            lblMasqueBinPoint3.Size = new Size(10, 15);
+            lblMasqueBinPoint3.TabIndex = 33;
+            lblMasqueBinPoint3.Text = ".";
             // 
-            // txtBinOctet2
+            // lblMasqueBinPoint2
             // 
-            txtBinOctet2.Cursor = Cursors.IBeam;
-            txtBinOctet2.Location = new Point(185, 84);
-            txtBinOctet2.MaxLength = 8;
-            txtBinOctet2.Name = "txtBinOctet2";
-            txtBinOctet2.PlaceholderText = "octet n°2";
-            txtBinOctet2.Size = new Size(80, 23);
-            txtBinOctet2.TabIndex = 12;
+            lblMasqueBinPoint2.AutoSize = true;
+            lblMasqueBinPoint2.Location = new Point(271, 217);
+            lblMasqueBinPoint2.Name = "lblMasqueBinPoint2";
+            lblMasqueBinPoint2.Size = new Size(10, 15);
+            lblMasqueBinPoint2.TabIndex = 32;
+            lblMasqueBinPoint2.Text = ".";
             // 
-            // label3
+            // txtMasqueBinOctet3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(169, 92);
-            label3.Name = "label3";
-            label3.Size = new Size(10, 15);
-            label3.TabIndex = 11;
-            label3.Text = ".";
+            txtMasqueBinOctet3.Cursor = Cursors.IBeam;
+            txtMasqueBinOctet3.Location = new Point(287, 209);
+            txtMasqueBinOctet3.Margin = new Padding(3, 0, 3, 0);
+            txtMasqueBinOctet3.MaxLength = 8;
+            txtMasqueBinOctet3.Name = "txtMasqueBinOctet3";
+            txtMasqueBinOctet3.PlaceholderText = "octet n°3";
+            txtMasqueBinOctet3.Size = new Size(80, 23);
+            txtMasqueBinOctet3.TabIndex = 31;
             // 
-            // label4
+            // txtMasqueBinOctet2
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(21, 87);
-            label4.Name = "label4";
-            label4.Size = new Size(49, 15);
-            label4.TabIndex = 10;
-            label4.Text = "Binaire :";
+            txtMasqueBinOctet2.Cursor = Cursors.IBeam;
+            txtMasqueBinOctet2.Location = new Point(185, 209);
+            txtMasqueBinOctet2.Margin = new Padding(3, 0, 3, 0);
+            txtMasqueBinOctet2.MaxLength = 8;
+            txtMasqueBinOctet2.Name = "txtMasqueBinOctet2";
+            txtMasqueBinOctet2.PlaceholderText = "octet n°2";
+            txtMasqueBinOctet2.Size = new Size(80, 23);
+            txtMasqueBinOctet2.TabIndex = 30;
             // 
-            // txtBinOctet1
+            // lblMasqueBinPoint1
             // 
-            txtBinOctet1.Cursor = Cursors.IBeam;
-            txtBinOctet1.Location = new Point(83, 84);
-            txtBinOctet1.MaxLength = 8;
-            txtBinOctet1.Name = "txtBinOctet1";
-            txtBinOctet1.PlaceholderText = "octet n°1";
-            txtBinOctet1.Size = new Size(80, 23);
-            txtBinOctet1.TabIndex = 9;
+            lblMasqueBinPoint1.AutoSize = true;
+            lblMasqueBinPoint1.Location = new Point(169, 217);
+            lblMasqueBinPoint1.Name = "lblMasqueBinPoint1";
+            lblMasqueBinPoint1.Size = new Size(10, 15);
+            lblMasqueBinPoint1.TabIndex = 29;
+            lblMasqueBinPoint1.Text = ".";
             // 
-            // txtDecOctet4
+            // lblMasqueBinaire
             // 
-            txtDecOctet4.Cursor = Cursors.IBeam;
-            txtDecOctet4.Location = new Point(389, 46);
-            txtDecOctet4.MaxLength = 3;
-            txtDecOctet4.Name = "txtDecOctet4";
-            txtDecOctet4.PlaceholderText = "octet n°4";
-            txtDecOctet4.Size = new Size(80, 23);
-            txtDecOctet4.TabIndex = 8;
+            lblMasqueBinaire.AutoSize = true;
+            lblMasqueBinaire.Location = new Point(21, 212);
+            lblMasqueBinaire.Name = "lblMasqueBinaire";
+            lblMasqueBinaire.Size = new Size(49, 15);
+            lblMasqueBinaire.TabIndex = 28;
+            lblMasqueBinaire.Text = "Binaire :";
             // 
-            // lblPoint3
+            // txtMasqueBinOctet1
             // 
-            lblPoint3.AutoSize = true;
-            lblPoint3.Location = new Point(373, 54);
-            lblPoint3.Name = "lblPoint3";
-            lblPoint3.Size = new Size(10, 15);
-            lblPoint3.TabIndex = 7;
-            lblPoint3.Text = ".";
+            txtMasqueBinOctet1.Cursor = Cursors.IBeam;
+            txtMasqueBinOctet1.Location = new Point(83, 209);
+            txtMasqueBinOctet1.Margin = new Padding(3, 0, 3, 15);
+            txtMasqueBinOctet1.MaxLength = 8;
+            txtMasqueBinOctet1.Name = "txtMasqueBinOctet1";
+            txtMasqueBinOctet1.PlaceholderText = "octet n°1";
+            txtMasqueBinOctet1.Size = new Size(80, 23);
+            txtMasqueBinOctet1.TabIndex = 27;
             // 
-            // lblPoint2
+            // txtMasqueDecOctet4
             // 
-            lblPoint2.AutoSize = true;
-            lblPoint2.Location = new Point(271, 54);
-            lblPoint2.Name = "lblPoint2";
-            lblPoint2.Size = new Size(10, 15);
-            lblPoint2.TabIndex = 6;
-            lblPoint2.Text = ".";
+            txtMasqueDecOctet4.Cursor = Cursors.IBeam;
+            txtMasqueDecOctet4.Location = new Point(389, 171);
+            txtMasqueDecOctet4.Margin = new Padding(3, 0, 3, 15);
+            txtMasqueDecOctet4.MaxLength = 3;
+            txtMasqueDecOctet4.Name = "txtMasqueDecOctet4";
+            txtMasqueDecOctet4.PlaceholderText = "octet n°4";
+            txtMasqueDecOctet4.Size = new Size(80, 23);
+            txtMasqueDecOctet4.TabIndex = 26;
             // 
-            // txtDecOctet3
+            // lblMasqueDecPoint3
             // 
-            txtDecOctet3.Cursor = Cursors.IBeam;
-            txtDecOctet3.Location = new Point(287, 46);
-            txtDecOctet3.MaxLength = 3;
-            txtDecOctet3.Name = "txtDecOctet3";
-            txtDecOctet3.PlaceholderText = "octet n°3";
-            txtDecOctet3.Size = new Size(80, 23);
-            txtDecOctet3.TabIndex = 5;
+            lblMasqueDecPoint3.AutoSize = true;
+            lblMasqueDecPoint3.Location = new Point(373, 179);
+            lblMasqueDecPoint3.Name = "lblMasqueDecPoint3";
+            lblMasqueDecPoint3.Size = new Size(10, 15);
+            lblMasqueDecPoint3.TabIndex = 25;
+            lblMasqueDecPoint3.Text = ".";
             // 
-            // txtDecOctet2
+            // lblMasqueDecPoint2
             // 
-            txtDecOctet2.Cursor = Cursors.IBeam;
-            txtDecOctet2.Location = new Point(185, 46);
-            txtDecOctet2.MaxLength = 3;
-            txtDecOctet2.Name = "txtDecOctet2";
-            txtDecOctet2.PlaceholderText = "octet n°2";
-            txtDecOctet2.Size = new Size(80, 23);
-            txtDecOctet2.TabIndex = 4;
+            lblMasqueDecPoint2.AutoSize = true;
+            lblMasqueDecPoint2.Location = new Point(271, 179);
+            lblMasqueDecPoint2.Name = "lblMasqueDecPoint2";
+            lblMasqueDecPoint2.Size = new Size(10, 15);
+            lblMasqueDecPoint2.TabIndex = 24;
+            lblMasqueDecPoint2.Text = ".";
             // 
-            // lblPoint1
+            // txtMasqueDecOctet3
             // 
-            lblPoint1.AutoSize = true;
-            lblPoint1.Location = new Point(169, 54);
-            lblPoint1.Name = "lblPoint1";
-            lblPoint1.Size = new Size(10, 15);
-            lblPoint1.TabIndex = 3;
-            lblPoint1.Text = ".";
+            txtMasqueDecOctet3.Cursor = Cursors.IBeam;
+            txtMasqueDecOctet3.Location = new Point(287, 171);
+            txtMasqueDecOctet3.Margin = new Padding(3, 0, 3, 15);
+            txtMasqueDecOctet3.MaxLength = 3;
+            txtMasqueDecOctet3.Name = "txtMasqueDecOctet3";
+            txtMasqueDecOctet3.PlaceholderText = "octet n°3";
+            txtMasqueDecOctet3.Size = new Size(80, 23);
+            txtMasqueDecOctet3.TabIndex = 23;
             // 
-            // lblDecimal
+            // txtMasqueDecOctet2
             // 
-            lblDecimal.AutoSize = true;
-            lblDecimal.Location = new Point(21, 49);
-            lblDecimal.Name = "lblDecimal";
-            lblDecimal.Size = new Size(56, 15);
-            lblDecimal.TabIndex = 2;
-            lblDecimal.Text = "Décimal :";
+            txtMasqueDecOctet2.Cursor = Cursors.IBeam;
+            txtMasqueDecOctet2.Location = new Point(185, 171);
+            txtMasqueDecOctet2.Margin = new Padding(3, 0, 3, 15);
+            txtMasqueDecOctet2.MaxLength = 3;
+            txtMasqueDecOctet2.Name = "txtMasqueDecOctet2";
+            txtMasqueDecOctet2.PlaceholderText = "octet n°2";
+            txtMasqueDecOctet2.Size = new Size(80, 23);
+            txtMasqueDecOctet2.TabIndex = 22;
+            // 
+            // lblMasqueDecPoint1
+            // 
+            lblMasqueDecPoint1.AutoSize = true;
+            lblMasqueDecPoint1.Location = new Point(169, 179);
+            lblMasqueDecPoint1.Name = "lblMasqueDecPoint1";
+            lblMasqueDecPoint1.Size = new Size(10, 15);
+            lblMasqueDecPoint1.TabIndex = 21;
+            lblMasqueDecPoint1.Text = ".";
+            // 
+            // lblMasqueDecimal
+            // 
+            lblMasqueDecimal.AutoSize = true;
+            lblMasqueDecimal.Location = new Point(21, 174);
+            lblMasqueDecimal.Name = "lblMasqueDecimal";
+            lblMasqueDecimal.Size = new Size(56, 15);
+            lblMasqueDecimal.TabIndex = 20;
+            lblMasqueDecimal.Text = "Décimal :";
+            // 
+            // txtMasqueDecOctet1
+            // 
+            txtMasqueDecOctet1.Cursor = Cursors.IBeam;
+            txtMasqueDecOctet1.Location = new Point(83, 171);
+            txtMasqueDecOctet1.Margin = new Padding(3, 0, 3, 15);
+            txtMasqueDecOctet1.MaxLength = 3;
+            txtMasqueDecOctet1.Name = "txtMasqueDecOctet1";
+            txtMasqueDecOctet1.PlaceholderText = "octet n°1";
+            txtMasqueDecOctet1.Size = new Size(80, 23);
+            txtMasqueDecOctet1.TabIndex = 19;
+            // 
+            // lblMasque
+            // 
+            lblMasque.Anchor = AnchorStyles.Top;
+            lblMasque.AutoSize = true;
+            lblMasque.Location = new Point(196, 136);
+            lblMasque.Margin = new Padding(3, 20, 3, 20);
+            lblMasque.Name = "lblMasque";
+            lblMasque.Size = new Size(102, 15);
+            lblMasque.TabIndex = 18;
+            lblMasque.Text = "Masque de réseau";
+            // 
+            // txtMasqueCIDR
+            // 
+            txtMasqueCIDR.Cursor = Cursors.IBeam;
+            txtMasqueCIDR.Location = new Point(83, 247);
+            txtMasqueCIDR.Margin = new Padding(3, 0, 3, 15);
+            txtMasqueCIDR.MaxLength = 8;
+            txtMasqueCIDR.Name = "txtMasqueCIDR";
+            txtMasqueCIDR.PlaceholderText = "CIDR";
+            txtMasqueCIDR.Size = new Size(38, 23);
+            txtMasqueCIDR.TabIndex = 17;
+            // 
+            // txtIPBinOctet4
+            // 
+            txtIPBinOctet4.Cursor = Cursors.IBeam;
+            txtIPBinOctet4.Location = new Point(389, 93);
+            txtIPBinOctet4.Margin = new Padding(3, 0, 3, 0);
+            txtIPBinOctet4.MaxLength = 8;
+            txtIPBinOctet4.Name = "txtIPBinOctet4";
+            txtIPBinOctet4.PlaceholderText = "octet n°4";
+            txtIPBinOctet4.Size = new Size(80, 23);
+            txtIPBinOctet4.TabIndex = 16;
+            // 
+            // lblIPBinPoint3
+            // 
+            lblIPBinPoint3.AutoSize = true;
+            lblIPBinPoint3.Location = new Point(373, 101);
+            lblIPBinPoint3.Name = "lblIPBinPoint3";
+            lblIPBinPoint3.Size = new Size(10, 15);
+            lblIPBinPoint3.TabIndex = 15;
+            lblIPBinPoint3.Text = ".";
+            // 
+            // lblIPBinPoint2
+            // 
+            lblIPBinPoint2.AutoSize = true;
+            lblIPBinPoint2.Location = new Point(271, 101);
+            lblIPBinPoint2.Name = "lblIPBinPoint2";
+            lblIPBinPoint2.Size = new Size(10, 15);
+            lblIPBinPoint2.TabIndex = 14;
+            lblIPBinPoint2.Text = ".";
+            // 
+            // txtIPBinOctet3
+            // 
+            txtIPBinOctet3.Cursor = Cursors.IBeam;
+            txtIPBinOctet3.Location = new Point(287, 93);
+            txtIPBinOctet3.Margin = new Padding(3, 0, 3, 0);
+            txtIPBinOctet3.MaxLength = 8;
+            txtIPBinOctet3.Name = "txtIPBinOctet3";
+            txtIPBinOctet3.PlaceholderText = "octet n°3";
+            txtIPBinOctet3.Size = new Size(80, 23);
+            txtIPBinOctet3.TabIndex = 13;
+            // 
+            // txtIPBinOctet2
+            // 
+            txtIPBinOctet2.Cursor = Cursors.IBeam;
+            txtIPBinOctet2.Location = new Point(185, 93);
+            txtIPBinOctet2.Margin = new Padding(3, 0, 3, 0);
+            txtIPBinOctet2.MaxLength = 8;
+            txtIPBinOctet2.Name = "txtIPBinOctet2";
+            txtIPBinOctet2.PlaceholderText = "octet n°2";
+            txtIPBinOctet2.Size = new Size(80, 23);
+            txtIPBinOctet2.TabIndex = 12;
+            // 
+            // lblIPBinPoint1
+            // 
+            lblIPBinPoint1.AutoSize = true;
+            lblIPBinPoint1.Location = new Point(169, 101);
+            lblIPBinPoint1.Name = "lblIPBinPoint1";
+            lblIPBinPoint1.Size = new Size(10, 15);
+            lblIPBinPoint1.TabIndex = 11;
+            lblIPBinPoint1.Text = ".";
+            // 
+            // lblIPBinaire
+            // 
+            lblIPBinaire.AutoSize = true;
+            lblIPBinaire.Location = new Point(21, 96);
+            lblIPBinaire.Name = "lblIPBinaire";
+            lblIPBinaire.Size = new Size(49, 15);
+            lblIPBinaire.TabIndex = 10;
+            lblIPBinaire.Text = "Binaire :";
+            // 
+            // txtIPBinOctet1
+            // 
+            txtIPBinOctet1.Cursor = Cursors.IBeam;
+            txtIPBinOctet1.Location = new Point(83, 93);
+            txtIPBinOctet1.Margin = new Padding(3, 0, 3, 0);
+            txtIPBinOctet1.MaxLength = 8;
+            txtIPBinOctet1.Name = "txtIPBinOctet1";
+            txtIPBinOctet1.PlaceholderText = "octet n°1";
+            txtIPBinOctet1.Size = new Size(80, 23);
+            txtIPBinOctet1.TabIndex = 9;
+            // 
+            // txtIPDecOctet4
+            // 
+            txtIPDecOctet4.Cursor = Cursors.IBeam;
+            txtIPDecOctet4.Location = new Point(389, 55);
+            txtIPDecOctet4.Margin = new Padding(3, 0, 3, 15);
+            txtIPDecOctet4.MaxLength = 3;
+            txtIPDecOctet4.Name = "txtIPDecOctet4";
+            txtIPDecOctet4.PlaceholderText = "octet n°4";
+            txtIPDecOctet4.Size = new Size(80, 23);
+            txtIPDecOctet4.TabIndex = 8;
+            // 
+            // lblIPDecPoint3
+            // 
+            lblIPDecPoint3.AutoSize = true;
+            lblIPDecPoint3.Location = new Point(373, 63);
+            lblIPDecPoint3.Name = "lblIPDecPoint3";
+            lblIPDecPoint3.Size = new Size(10, 15);
+            lblIPDecPoint3.TabIndex = 7;
+            lblIPDecPoint3.Text = ".";
+            // 
+            // lblIPDecPoint2
+            // 
+            lblIPDecPoint2.AutoSize = true;
+            lblIPDecPoint2.Location = new Point(271, 63);
+            lblIPDecPoint2.Name = "lblIPDecPoint2";
+            lblIPDecPoint2.Size = new Size(10, 15);
+            lblIPDecPoint2.TabIndex = 6;
+            lblIPDecPoint2.Text = ".";
+            // 
+            // txtIPDecOctet3
+            // 
+            txtIPDecOctet3.Cursor = Cursors.IBeam;
+            txtIPDecOctet3.Location = new Point(287, 55);
+            txtIPDecOctet3.Margin = new Padding(3, 0, 3, 15);
+            txtIPDecOctet3.MaxLength = 3;
+            txtIPDecOctet3.Name = "txtIPDecOctet3";
+            txtIPDecOctet3.PlaceholderText = "octet n°3";
+            txtIPDecOctet3.Size = new Size(80, 23);
+            txtIPDecOctet3.TabIndex = 5;
+            // 
+            // txtIPDecOctet2
+            // 
+            txtIPDecOctet2.Cursor = Cursors.IBeam;
+            txtIPDecOctet2.Location = new Point(185, 55);
+            txtIPDecOctet2.Margin = new Padding(3, 0, 3, 15);
+            txtIPDecOctet2.MaxLength = 3;
+            txtIPDecOctet2.Name = "txtIPDecOctet2";
+            txtIPDecOctet2.PlaceholderText = "octet n°2";
+            txtIPDecOctet2.Size = new Size(80, 23);
+            txtIPDecOctet2.TabIndex = 4;
+            // 
+            // lblIPDecPoint1
+            // 
+            lblIPDecPoint1.AutoSize = true;
+            lblIPDecPoint1.Location = new Point(169, 63);
+            lblIPDecPoint1.Name = "lblIPDecPoint1";
+            lblIPDecPoint1.Size = new Size(10, 15);
+            lblIPDecPoint1.TabIndex = 3;
+            lblIPDecPoint1.Text = ".";
+            // 
+            // lblIPDecimal
+            // 
+            lblIPDecimal.AutoSize = true;
+            lblIPDecimal.Location = new Point(21, 58);
+            lblIPDecimal.Name = "lblIPDecimal";
+            lblIPDecimal.Size = new Size(56, 15);
+            lblIPDecimal.TabIndex = 2;
+            lblIPDecimal.Text = "Décimal :";
             // 
             // lblIPv4
             // 
             lblIPv4.Anchor = AnchorStyles.Top;
             lblIPv4.AutoSize = true;
-            lblIPv4.Location = new Point(222, 10);
+            lblIPv4.Location = new Point(208, 20);
+            lblIPv4.Margin = new Padding(3, 0, 3, 20);
             lblIPv4.Name = "lblIPv4";
             lblIPv4.Size = new Size(73, 15);
             lblIPv4.TabIndex = 1;
             lblIPv4.Text = "Adresse IPv4";
             // 
-            // txtDecOctet1
+            // txtIPDecOctet1
             // 
-            txtDecOctet1.Cursor = Cursors.IBeam;
-            txtDecOctet1.Location = new Point(83, 46);
-            txtDecOctet1.MaxLength = 3;
-            txtDecOctet1.Name = "txtDecOctet1";
-            txtDecOctet1.PlaceholderText = "octet n°1";
-            txtDecOctet1.Size = new Size(80, 23);
-            txtDecOctet1.TabIndex = 0;
+            txtIPDecOctet1.Cursor = Cursors.IBeam;
+            txtIPDecOctet1.Location = new Point(83, 55);
+            txtIPDecOctet1.Margin = new Padding(3, 0, 3, 15);
+            txtIPDecOctet1.MaxLength = 3;
+            txtIPDecOctet1.Name = "txtIPDecOctet1";
+            txtIPDecOctet1.PlaceholderText = "octet n°1";
+            txtIPDecOctet1.Size = new Size(80, 23);
+            txtIPDecOctet1.TabIndex = 0;
             // 
             // Interface
             // 
@@ -257,6 +506,7 @@
             ClientSize = new Size(584, 535);
             Controls.Add(pnlSaisie);
             Controls.Add(lblTitre);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MinimumSize = new Size(600, 450);
             Name = "Interface";
             Padding = new Padding(50, 10, 50, 10);
@@ -272,22 +522,42 @@
 
         private Label lblTitre;
         private Panel pnlSaisie;
-        private TextBox txtDecOctet1;
+        private TextBox txtIPDecOctet1;
         private Label lblIPv4;
-        private Label lblPoint1;
-        private Label lblDecimal;
-        private TextBox txtDecOctet2;
-        private TextBox txtDecOctet4;
-        private Label lblPoint3;
-        private Label lblPoint2;
-        private TextBox txtDecOctet3;
-        private TextBox txtBinOctet4;
-        private Label label1;
-        private Label label2;
-        private TextBox txtBinOctet3;
-        private TextBox txtBinOctet2;
-        private Label label3;
-        private Label label4;
-        private TextBox txtBinOctet1;
+        private Label lblIPDecPoint1;
+        private Label lblIPDecimal;
+        private TextBox txtIPDecOctet2;
+        private TextBox txtIPDecOctet4;
+        private Label lblIPDecPoint3;
+        private Label lblIPDecPoint2;
+        private TextBox txtIPDecOctet3;
+        private TextBox txtIPBinOctet4;
+        private Label lblIPBinPoint3;
+        private Label lblIPBinPoint2;
+        private TextBox txtIPBinOctet3;
+        private TextBox txtIPBinOctet2;
+        private Label lblIPBinPoint1;
+        private Label lblIPBinaire;
+        private TextBox txtIPBinOctet1;
+        private Label lblMasque;
+        private TextBox txtMasqueCIDR;
+        private TextBox txtMasqueBinOctet4;
+        private Label lblMasqueBinPoint3;
+        private Label lblMasqueBinPoint2;
+        private TextBox txtMasqueBinOctet3;
+        private TextBox txtMasqueBinOctet2;
+        private Label lblMasqueBinPoint1;
+        private Label lblMasqueBinaire;
+        private TextBox txtMasqueBinOctet1;
+        private TextBox txtMasqueDecOctet4;
+        private Label lblMasqueDecPoint3;
+        private Label lblMasqueDecPoint2;
+        private TextBox txtMasqueDecOctet3;
+        private TextBox txtMasqueDecOctet2;
+        private Label lblMasqueDecPoint1;
+        private Label lblMasqueDecimal;
+        private TextBox txtMasqueDecOctet1;
+        private Label lblMasqueCIDR;
+        private Button btnValider;
     }
 }
