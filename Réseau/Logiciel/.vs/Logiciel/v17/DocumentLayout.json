@@ -18,12 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
@@ -40,7 +36,7 @@
               "RelativeDocumentMoniker": "BackEnd\\Program.cs",
               "ToolTip": "C:\\Users\\leoro\\OneDrive\\Bureau\\Cours\\S2\\SAE\\SAE-2.3\\SAE-2.3\\R\u00E9seau\\Logiciel\\BackEnd\\Program.cs",
               "RelativeToolTip": "BackEnd\\Program.cs",
-              "ViewState": "AQIAAP8AAAAAAAAAAAAkwMQAAAAsAAAA",
+              "ViewState": "AQIAALAAAAAAAAAAAAAIwKIAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-26T12:49:03.016Z",
               "EditorCaption": ""

@@ -151,54 +151,74 @@
                     msqOctet2 = Convert.ToUInt32(msqBinaire2, 2);
                     msqOctet3 = Convert.ToUInt32(msqBinaire3, 2);
                     msqOctet4 = Convert.ToUInt32(msqBinaire4, 2);
+                    masque = new uint[NbOctet];
+                    masque[0] = msqOctet1;
+                    masque[1] = msqOctet2;
+                    masque[2] = msqOctet3;
+                    masque[3] = msqOctet4;
+                    masquebin = new string[NbOctet];
+                    masquebin[0] = msqBinaire1;
+                    masquebin[1] = msqBinaire2;
+                    masquebin[2] = msqBinaire3;
+                    masquebin[3] = msqBinaire4;
                     break;
                 case 2:
-                    for (int i = 1; i <= NbOctet; i++)
+                    bool masqueValide;
+                    do
                     {
-                        do
+                        masqueValide = true;
+                        for (int i = 1; i <= NbOctet; i++)
                         {
-                            Console.WriteLine($"Quel est l'octet {i} du masque ?");
-                            reponse = Convert.ToUInt32(Console.ReadLine());
-                            rep = Convert.ToString(reponse, 2);
-                            if (reponse > 255 || reponse < 0)
+                            do
                             {
-                                Console.WriteLine("Erreur : L'octet doit être compris entre 0 et 255");
+                                Console.WriteLine($"Quel est l'octet {i} du masque ?");
+                                reponse = Convert.ToUInt32(Console.ReadLine());
+                                rep = Convert.ToString(reponse, 2).PadLeft(8, '0');
+                                if (reponse > 255 || reponse < 0)
+                                {
+                                    Console.WriteLine("Erreur : L'octet doit être compris entre 0 et 255");
+                                }
+                            } while (reponse > 255 || reponse < 0);
+                            switch (i)
+                            {
+                                default:
+                                    break;
+                                case 1:
+                                    msqOctet1 = reponse;
+                                    msqBinaire1 = rep;
+                                    break;
+                                case 2:
+                                    msqOctet2 = reponse;
+                                    msqBinaire2 = rep;
+                                    break;
+                                case 3:
+                                    msqOctet3 = reponse;
+                                    msqBinaire3 = rep;
+                                    break;
+                                case 4:
+                                    msqOctet4 = reponse;
+                                    msqBinaire4 = rep;
+                                    break;
                             }
-                        } while (reponse > 255 || reponse < 0);
-                        switch (i)
-                        {
-                            default:
-                                break;
-                            case 1:
-                                msqOctet1 = reponse;
-                                msqBinaire1 = rep;
-                                break;
-                            case 2:
-                                msqOctet2 = reponse;
-                                msqBinaire2 = rep;
-                                break;
-                            case 3:
-                                msqOctet3 = reponse;
-                                msqBinaire3 = rep;
-                                break;
-                            case 4:
-                                msqOctet4 = reponse;
-                                msqBinaire4 = rep;
-                                break;
                         }
-                    }
+                        masque = new uint[NbOctet];
+                        masque[0] = msqOctet1;
+                        masque[1] = msqOctet2;
+                        masque[2] = msqOctet3;
+                        masque[3] = msqOctet4;
+                        masquebin = new string[NbOctet];
+                        masquebin[0] = msqBinaire1;
+                        masquebin[1] = msqBinaire2;
+                        masquebin[2] = msqBinaire3;
+                        masquebin[3] = msqBinaire4;
+                        if (!VerificationMasque(masquebin))
+                        {
+                            Console.WriteLine("Erreur : Le masque saisi n'est pas plausible. Veuillez recommencer.");
+                            masqueValide = false;
+                        }
+                    } while (!masqueValide);
                     break;
             }
-            masque = new uint[NbOctet];
-            masque[0] = msqOctet1;
-            masque[1] = msqOctet2;
-            masque[2] = msqOctet3;
-            masque[3] = msqOctet4;
-            masquebin = new string[NbOctet];
-            masquebin[0] = msqBinaire1;
-            masquebin[1] = msqBinaire2;
-            masquebin[2] = msqBinaire3;
-            masquebin[3] = msqBinaire4;
             if (CIDR == 0)
             {
                 CIDR = CalculerCIDR(masquebin);
@@ -228,6 +248,14 @@
                 }
             }
             return cidr;
+        }
+
+        public bool VerificationMasque(string[] masquebin)
+        {
+            string masqueConcatene = string.Join("", masquebin);
+            int premierZero = masqueConcatene.IndexOf('0');
+            int dernierUn = masqueConcatene.LastIndexOf('1');
+            return premierZero == -1 || dernierUn < premierZero;
         }
 
         public void Calculs()
