@@ -67,7 +67,16 @@
             lblIPDecimal = new Label();
             lblIPv4 = new Label();
             txtIPDecOctet1 = new TextBox();
+            pnlResultat = new Panel();
+            lblMachines = new Label();
+            lblNombreIP = new Label();
+            lblDerniereIP = new Label();
+            lblPremiereIP = new Label();
+            lblBroadcast = new Label();
+            lblNet = new Label();
+            lblClasse = new Label();
             pnlSaisie.SuspendLayout();
+            pnlResultat.SuspendLayout();
             SuspendLayout();
             // 
             // lblTitre
@@ -75,7 +84,7 @@
             lblTitre.Anchor = AnchorStyles.Top;
             lblTitre.AutoSize = true;
             lblTitre.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitre.Location = new Point(139, 28);
+            lblTitre.Location = new Point(134, 25);
             lblTitre.Name = "lblTitre";
             lblTitre.Size = new Size(322, 32);
             lblTitre.TabIndex = 0;
@@ -84,7 +93,8 @@
             // pnlSaisie
             // 
             pnlSaisie.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            pnlSaisie.BorderStyle = BorderStyle.FixedSingle;
+            pnlSaisie.AutoSize = true;
+            pnlSaisie.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             pnlSaisie.Controls.Add(btnValider);
             pnlSaisie.Controls.Add(lblMasqueCIDR);
             pnlSaisie.Controls.Add(txtMasqueBinOctet4);
@@ -122,18 +132,20 @@
             pnlSaisie.Controls.Add(lblIPDecimal);
             pnlSaisie.Controls.Add(lblIPv4);
             pnlSaisie.Controls.Add(txtIPDecOctet1);
-            pnlSaisie.Location = new Point(50, 104);
+            pnlSaisie.Location = new Point(50, 82);
+            pnlSaisie.Margin = new Padding(0, 0, 0, 25);
             pnlSaisie.Name = "pnlSaisie";
             pnlSaisie.Padding = new Padding(26, 20, 26, 20);
-            pnlSaisie.Size = new Size(500, 336);
+            pnlSaisie.Size = new Size(498, 328);
             pnlSaisie.TabIndex = 1;
             // 
             // btnValider
             // 
-            btnValider.Location = new Point(208, 288);
+            btnValider.Location = new Point(208, 285);
+            btnValider.Margin = new Padding(0);
             btnValider.Name = "btnValider";
             btnValider.Size = new Size(75, 23);
-            btnValider.TabIndex = 36;
+            btnValider.TabIndex = 17;
             btnValider.Text = "Valider";
             btnValider.UseVisualStyleBackColor = true;
             // 
@@ -155,7 +167,8 @@
             txtMasqueBinOctet4.Name = "txtMasqueBinOctet4";
             txtMasqueBinOctet4.PlaceholderText = "octet n°4";
             txtMasqueBinOctet4.Size = new Size(80, 23);
-            txtMasqueBinOctet4.TabIndex = 34;
+            txtMasqueBinOctet4.TabIndex = 15;
+            txtMasqueBinOctet4.Tag = "4";
             // 
             // lblMasqueBinPoint3
             // 
@@ -184,7 +197,8 @@
             txtMasqueBinOctet3.Name = "txtMasqueBinOctet3";
             txtMasqueBinOctet3.PlaceholderText = "octet n°3";
             txtMasqueBinOctet3.Size = new Size(80, 23);
-            txtMasqueBinOctet3.TabIndex = 31;
+            txtMasqueBinOctet3.TabIndex = 14;
+            txtMasqueBinOctet3.Tag = "3";
             // 
             // txtMasqueBinOctet2
             // 
@@ -195,7 +209,8 @@
             txtMasqueBinOctet2.Name = "txtMasqueBinOctet2";
             txtMasqueBinOctet2.PlaceholderText = "octet n°2";
             txtMasqueBinOctet2.Size = new Size(80, 23);
-            txtMasqueBinOctet2.TabIndex = 30;
+            txtMasqueBinOctet2.TabIndex = 13;
+            txtMasqueBinOctet2.Tag = "2";
             // 
             // lblMasqueBinPoint1
             // 
@@ -224,7 +239,8 @@
             txtMasqueBinOctet1.Name = "txtMasqueBinOctet1";
             txtMasqueBinOctet1.PlaceholderText = "octet n°1";
             txtMasqueBinOctet1.Size = new Size(80, 23);
-            txtMasqueBinOctet1.TabIndex = 27;
+            txtMasqueBinOctet1.TabIndex = 12;
+            txtMasqueBinOctet1.Tag = "1";
             // 
             // txtMasqueDecOctet4
             // 
@@ -235,7 +251,8 @@
             txtMasqueDecOctet4.Name = "txtMasqueDecOctet4";
             txtMasqueDecOctet4.PlaceholderText = "octet n°4";
             txtMasqueDecOctet4.Size = new Size(80, 23);
-            txtMasqueDecOctet4.TabIndex = 26;
+            txtMasqueDecOctet4.TabIndex = 11;
+            txtMasqueDecOctet4.Tag = "4";
             // 
             // lblMasqueDecPoint3
             // 
@@ -264,7 +281,8 @@
             txtMasqueDecOctet3.Name = "txtMasqueDecOctet3";
             txtMasqueDecOctet3.PlaceholderText = "octet n°3";
             txtMasqueDecOctet3.Size = new Size(80, 23);
-            txtMasqueDecOctet3.TabIndex = 23;
+            txtMasqueDecOctet3.TabIndex = 10;
+            txtMasqueDecOctet3.Tag = "3";
             // 
             // txtMasqueDecOctet2
             // 
@@ -275,7 +293,8 @@
             txtMasqueDecOctet2.Name = "txtMasqueDecOctet2";
             txtMasqueDecOctet2.PlaceholderText = "octet n°2";
             txtMasqueDecOctet2.Size = new Size(80, 23);
-            txtMasqueDecOctet2.TabIndex = 22;
+            txtMasqueDecOctet2.TabIndex = 9;
+            txtMasqueDecOctet2.Tag = "2";
             // 
             // lblMasqueDecPoint1
             // 
@@ -304,13 +323,14 @@
             txtMasqueDecOctet1.Name = "txtMasqueDecOctet1";
             txtMasqueDecOctet1.PlaceholderText = "octet n°1";
             txtMasqueDecOctet1.Size = new Size(80, 23);
-            txtMasqueDecOctet1.TabIndex = 19;
+            txtMasqueDecOctet1.TabIndex = 8;
+            txtMasqueDecOctet1.Tag = "1";
             // 
             // lblMasque
             // 
             lblMasque.Anchor = AnchorStyles.Top;
             lblMasque.AutoSize = true;
-            lblMasque.Location = new Point(196, 136);
+            lblMasque.Location = new Point(182, 136);
             lblMasque.Margin = new Padding(3, 20, 3, 20);
             lblMasque.Name = "lblMasque";
             lblMasque.Size = new Size(102, 15);
@@ -322,11 +342,11 @@
             txtMasqueCIDR.Cursor = Cursors.IBeam;
             txtMasqueCIDR.Location = new Point(83, 247);
             txtMasqueCIDR.Margin = new Padding(3, 0, 3, 15);
-            txtMasqueCIDR.MaxLength = 8;
+            txtMasqueCIDR.MaxLength = 2;
             txtMasqueCIDR.Name = "txtMasqueCIDR";
             txtMasqueCIDR.PlaceholderText = "CIDR";
             txtMasqueCIDR.Size = new Size(38, 23);
-            txtMasqueCIDR.TabIndex = 17;
+            txtMasqueCIDR.TabIndex = 16;
             // 
             // txtIPBinOctet4
             // 
@@ -337,7 +357,8 @@
             txtIPBinOctet4.Name = "txtIPBinOctet4";
             txtIPBinOctet4.PlaceholderText = "octet n°4";
             txtIPBinOctet4.Size = new Size(80, 23);
-            txtIPBinOctet4.TabIndex = 16;
+            txtIPBinOctet4.TabIndex = 7;
+            txtIPBinOctet4.Tag = "4";
             // 
             // lblIPBinPoint3
             // 
@@ -366,7 +387,8 @@
             txtIPBinOctet3.Name = "txtIPBinOctet3";
             txtIPBinOctet3.PlaceholderText = "octet n°3";
             txtIPBinOctet3.Size = new Size(80, 23);
-            txtIPBinOctet3.TabIndex = 13;
+            txtIPBinOctet3.TabIndex = 6;
+            txtIPBinOctet3.Tag = "3";
             // 
             // txtIPBinOctet2
             // 
@@ -377,7 +399,8 @@
             txtIPBinOctet2.Name = "txtIPBinOctet2";
             txtIPBinOctet2.PlaceholderText = "octet n°2";
             txtIPBinOctet2.Size = new Size(80, 23);
-            txtIPBinOctet2.TabIndex = 12;
+            txtIPBinOctet2.TabIndex = 5;
+            txtIPBinOctet2.Tag = "2";
             // 
             // lblIPBinPoint1
             // 
@@ -406,7 +429,8 @@
             txtIPBinOctet1.Name = "txtIPBinOctet1";
             txtIPBinOctet1.PlaceholderText = "octet n°1";
             txtIPBinOctet1.Size = new Size(80, 23);
-            txtIPBinOctet1.TabIndex = 9;
+            txtIPBinOctet1.TabIndex = 4;
+            txtIPBinOctet1.Tag = "1";
             // 
             // txtIPDecOctet4
             // 
@@ -417,7 +441,8 @@
             txtIPDecOctet4.Name = "txtIPDecOctet4";
             txtIPDecOctet4.PlaceholderText = "octet n°4";
             txtIPDecOctet4.Size = new Size(80, 23);
-            txtIPDecOctet4.TabIndex = 8;
+            txtIPDecOctet4.TabIndex = 3;
+            txtIPDecOctet4.Tag = "4";
             // 
             // lblIPDecPoint3
             // 
@@ -446,7 +471,8 @@
             txtIPDecOctet3.Name = "txtIPDecOctet3";
             txtIPDecOctet3.PlaceholderText = "octet n°3";
             txtIPDecOctet3.Size = new Size(80, 23);
-            txtIPDecOctet3.TabIndex = 5;
+            txtIPDecOctet3.TabIndex = 2;
+            txtIPDecOctet3.Tag = "3";
             // 
             // txtIPDecOctet2
             // 
@@ -457,7 +483,8 @@
             txtIPDecOctet2.Name = "txtIPDecOctet2";
             txtIPDecOctet2.PlaceholderText = "octet n°2";
             txtIPDecOctet2.Size = new Size(80, 23);
-            txtIPDecOctet2.TabIndex = 4;
+            txtIPDecOctet2.TabIndex = 1;
+            txtIPDecOctet2.Tag = "2";
             // 
             // lblIPDecPoint1
             // 
@@ -481,11 +508,11 @@
             // 
             lblIPv4.Anchor = AnchorStyles.Top;
             lblIPv4.AutoSize = true;
-            lblIPv4.Location = new Point(208, 20);
+            lblIPv4.Location = new Point(194, 20);
             lblIPv4.Margin = new Padding(3, 0, 3, 20);
             lblIPv4.Name = "lblIPv4";
             lblIPv4.Size = new Size(73, 15);
-            lblIPv4.TabIndex = 1;
+            lblIPv4.TabIndex = 18;
             lblIPv4.Text = "Adresse IPv4";
             // 
             // txtIPDecOctet1
@@ -498,22 +525,115 @@
             txtIPDecOctet1.PlaceholderText = "octet n°1";
             txtIPDecOctet1.Size = new Size(80, 23);
             txtIPDecOctet1.TabIndex = 0;
+            txtIPDecOctet1.Tag = "1";
+            txtIPDecOctet1.Leave += txtIPDecOctet_Leave;
+            // 
+            // pnlResultat
+            // 
+            pnlResultat.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pnlResultat.Controls.Add(lblMachines);
+            pnlResultat.Controls.Add(lblNombreIP);
+            pnlResultat.Controls.Add(lblDerniereIP);
+            pnlResultat.Controls.Add(lblPremiereIP);
+            pnlResultat.Controls.Add(lblBroadcast);
+            pnlResultat.Controls.Add(lblNet);
+            pnlResultat.Controls.Add(lblClasse);
+            pnlResultat.Location = new Point(50, 410);
+            pnlResultat.Name = "pnlResultat";
+            pnlResultat.Padding = new Padding(26, 20, 26, 20);
+            pnlResultat.Size = new Size(498, 214);
+            pnlResultat.TabIndex = 2;
+            pnlResultat.Visible = false;
+            // 
+            // lblMachines
+            // 
+            lblMachines.AutoSize = true;
+            lblMachines.Location = new Point(21, 170);
+            lblMachines.Margin = new Padding(3, 0, 3, 10);
+            lblMachines.Name = "lblMachines";
+            lblMachines.Size = new Size(127, 15);
+            lblMachines.TabIndex = 43;
+            lblMachines.Text = "Nombre de machines :";
+            // 
+            // lblNombreIP
+            // 
+            lblNombreIP.AutoSize = true;
+            lblNombreIP.Location = new Point(21, 145);
+            lblNombreIP.Margin = new Padding(3, 0, 3, 10);
+            lblNombreIP.Name = "lblNombreIP";
+            lblNombreIP.Size = new Size(85, 15);
+            lblNombreIP.TabIndex = 42;
+            lblNombreIP.Text = "Nombre d'IPs :";
+            // 
+            // lblDerniereIP
+            // 
+            lblDerniereIP.AutoSize = true;
+            lblDerniereIP.Location = new Point(21, 120);
+            lblDerniereIP.Margin = new Padding(3, 0, 3, 10);
+            lblDerniereIP.Name = "lblDerniereIP";
+            lblDerniereIP.Size = new Size(112, 15);
+            lblDerniereIP.TabIndex = 41;
+            lblDerniereIP.Text = "Dernière adresse IP :";
+            // 
+            // lblPremiereIP
+            // 
+            lblPremiereIP.AutoSize = true;
+            lblPremiereIP.Location = new Point(21, 95);
+            lblPremiereIP.Margin = new Padding(3, 0, 3, 10);
+            lblPremiereIP.Name = "lblPremiereIP";
+            lblPremiereIP.Size = new Size(90, 15);
+            lblPremiereIP.TabIndex = 40;
+            lblPremiereIP.Text = "1ère adresse IP :";
+            // 
+            // lblBroadcast
+            // 
+            lblBroadcast.AutoSize = true;
+            lblBroadcast.Location = new Point(21, 70);
+            lblBroadcast.Margin = new Padding(3, 0, 3, 10);
+            lblBroadcast.Name = "lblBroadcast";
+            lblBroadcast.Size = new Size(109, 15);
+            lblBroadcast.TabIndex = 39;
+            lblBroadcast.Text = "Adresse Broadcast :";
+            // 
+            // lblNet
+            // 
+            lblNet.AutoSize = true;
+            lblNet.Location = new Point(21, 45);
+            lblNet.Margin = new Padding(3, 0, 3, 10);
+            lblNet.Name = "lblNet";
+            lblNet.Size = new Size(76, 15);
+            lblNet.TabIndex = 38;
+            lblNet.Text = "Adresse Net :";
+            // 
+            // lblClasse
+            // 
+            lblClasse.AutoSize = true;
+            lblClasse.Location = new Point(21, 20);
+            lblClasse.Margin = new Padding(3, 0, 3, 10);
+            lblClasse.Name = "lblClasse";
+            lblClasse.Size = new Size(46, 15);
+            lblClasse.TabIndex = 37;
+            lblClasse.Text = "Classe :";
             // 
             // Interface
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(584, 535);
+            ClientSize = new Size(584, 747);
+            Controls.Add(pnlResultat);
             Controls.Add(pnlSaisie);
             Controls.Add(lblTitre);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             MinimumSize = new Size(600, 450);
             Name = "Interface";
-            Padding = new Padding(50, 10, 50, 10);
+            Padding = new Padding(50, 25, 50, 25);
             ShowIcon = false;
             Text = "Calculateur de sous-réseau";
             pnlSaisie.ResumeLayout(false);
             pnlSaisie.PerformLayout();
+            pnlResultat.ResumeLayout(false);
+            pnlResultat.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -559,5 +679,13 @@
         private TextBox txtMasqueDecOctet1;
         private Label lblMasqueCIDR;
         private Button btnValider;
+        private Panel pnlResultat;
+        private Label lblClasse;
+        private Label lblNet;
+        private Label lblBroadcast;
+        private Label lblPremiereIP;
+        private Label lblDerniereIP;
+        private Label lblMachines;
+        private Label lblNombreIP;
     }
 }
