@@ -372,11 +372,26 @@ namespace FrontEnd
                 txtMasqueDecOctet4.Text = reseau.msqOctet4.ToString();
                 btnValider.Enabled = true;
             }
-            catch 
+            catch
             {
                 ResetOctetText(cidr);
                 return;
             }
+        }
+
+        private void btnValider_Click(object sender, EventArgs e)
+        {
+            reseau.Calculs();
+            Height = 663;
+            pnlResultat.Visible = true;
+
+            lblClasse.Text = $"Classe : {reseau.Classe}";
+            lblNet.Text = $"Adresse Net : {reseau.IPToString(reseau.net)}";
+            lblBroadcast.Text = $"Adresse Broadcast : {reseau.IPToString(reseau.broadcast)}";
+            lblPremiereIP.Text = $"1ère adresse IP : {reseau.IPToString(reseau.firstIP)}";
+            lblDerniereIP.Text = $"Dernière adresse IP : {reseau.IPToString(reseau.lastIP)}";
+            lblNombreIP.Text = $"Nombre d'IPs : {reseau.NbIP}";
+            lblMachines.Text = $"Nombre de machines : {reseau.NbMachine}";
         }
     }
 }

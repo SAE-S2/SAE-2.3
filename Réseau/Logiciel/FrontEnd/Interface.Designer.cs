@@ -1,4 +1,5 @@
-﻿namespace FrontEnd
+﻿
+namespace FrontEnd
 {
     partial class Interface
     {
@@ -149,6 +150,7 @@
             btnValider.TabIndex = 17;
             btnValider.Text = "Valider";
             btnValider.UseVisualStyleBackColor = true;
+            btnValider.Click += btnValider_Click;
             // 
             // lblMasqueCIDR
             // 
@@ -637,7 +639,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(584, 747);
+            ClientSize = new Size(584, 624);
             Controls.Add(pnlResultat);
             Controls.Add(pnlSaisie);
             Controls.Add(lblTitre);

@@ -1,4 +1,6 @@
-﻿namespace BackEnd
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace BackEnd
 {
     public class Reseau
     {
@@ -347,6 +349,11 @@
             adressebin = new string[NbOctet];
             masque = new uint[NbOctet];
             masquebin = new string[NbOctet];
+        }
+
+        public string IPToString(uint[] IP)
+        {
+            return $"{IP[0]}.{IP[1]}.{IP[2]}.{IP[3]}";
         }
 
         public void AffichageReseau()
