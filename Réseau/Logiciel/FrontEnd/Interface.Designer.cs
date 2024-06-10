@@ -359,6 +359,7 @@
             txtIPBinOctet4.Size = new Size(80, 23);
             txtIPBinOctet4.TabIndex = 7;
             txtIPBinOctet4.Tag = "4";
+            txtIPBinOctet4.Leave += txtIPBinOctet_Leave;
             // 
             // lblIPBinPoint3
             // 
@@ -389,6 +390,7 @@
             txtIPBinOctet3.Size = new Size(80, 23);
             txtIPBinOctet3.TabIndex = 6;
             txtIPBinOctet3.Tag = "3";
+            txtIPBinOctet3.Leave += txtIPBinOctet_Leave;
             // 
             // txtIPBinOctet2
             // 
@@ -401,6 +403,7 @@
             txtIPBinOctet2.Size = new Size(80, 23);
             txtIPBinOctet2.TabIndex = 5;
             txtIPBinOctet2.Tag = "2";
+            txtIPBinOctet2.Leave += txtIPBinOctet_Leave;
             // 
             // lblIPBinPoint1
             // 
@@ -431,6 +434,7 @@
             txtIPBinOctet1.Size = new Size(80, 23);
             txtIPBinOctet1.TabIndex = 4;
             txtIPBinOctet1.Tag = "1";
+            txtIPBinOctet1.Leave += txtIPBinOctet_Leave;
             // 
             // txtIPDecOctet4
             // 
@@ -443,6 +447,7 @@
             txtIPDecOctet4.Size = new Size(80, 23);
             txtIPDecOctet4.TabIndex = 3;
             txtIPDecOctet4.Tag = "4";
+            txtIPDecOctet4.Leave += txtIPDecOctet_Leave;
             // 
             // lblIPDecPoint3
             // 
@@ -473,6 +478,7 @@
             txtIPDecOctet3.Size = new Size(80, 23);
             txtIPDecOctet3.TabIndex = 2;
             txtIPDecOctet3.Tag = "3";
+            txtIPDecOctet3.Leave += txtIPDecOctet_Leave;
             // 
             // txtIPDecOctet2
             // 
@@ -485,6 +491,7 @@
             txtIPDecOctet2.Size = new Size(80, 23);
             txtIPDecOctet2.TabIndex = 1;
             txtIPDecOctet2.Tag = "2";
+            txtIPDecOctet2.Leave += txtIPDecOctet_Leave;
             // 
             // lblIPDecPoint1
             // 

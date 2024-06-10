@@ -23,31 +23,43 @@ namespace FrontEnd
         private void txtIPDecOctet_Leave(object sender, EventArgs e)
         {
             TextBox octet = (TextBox)sender;
-            uint val = Convert.ToUInt16(octet.Text);
-
-            if (val < 0 && val > 255)
+            try
             {
+                uint val = Convert.ToUInt32(octet.Text);
+                if (val < 0 || val > 255)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+
+                switch (octet.Tag)
+                {
+                    case 1:
+                        reseau.adrOctet1 = val;
+                        break;
+                    case 2:
+                        reseau.adrOctet2 = val;
+                        break;
+                    case 3:
+                        reseau.adrOctet3 = val;
+                        break;
+                    case 4:
+                        reseau.adrOctet4 = val;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch
+            {
+                //Réinitialise le texte si une erreur se produit
                 octet.Text = "";
                 return;
             }
+        }
 
-            switch (octet.Tag)
-            {
-                case 1:
-                    reseau.adrOctet1 = val;
-                    break;
-                case 2:
-                    reseau.adrOctet2 = val;
-                    break;
-                case 3:
-                    reseau.adrOctet3 = val;
-                    break;
-                case 4:
-                    reseau.adrOctet4 = val;
-                    break;
-                default:
-                    break;
-            }
+        private void txtIPBinOctet_Leave(object sender, EventArgs e)
+        {
+
         }
     }
 }
