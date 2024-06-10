@@ -141,6 +141,7 @@
             // 
             // btnValider
             // 
+            btnValider.Enabled = false;
             btnValider.Location = new Point(208, 285);
             btnValider.Margin = new Padding(0);
             btnValider.Name = "btnValider";
@@ -168,7 +169,8 @@
             txtMasqueBinOctet4.PlaceholderText = "octet n°4";
             txtMasqueBinOctet4.Size = new Size(80, 23);
             txtMasqueBinOctet4.TabIndex = 15;
-            txtMasqueBinOctet4.Tag = "4";
+            txtMasqueBinOctet4.Tag = "MSQ4";
+            txtMasqueBinOctet4.Leave += txtMasqueBinOctet_Leave;
             // 
             // lblMasqueBinPoint3
             // 
@@ -198,7 +200,8 @@
             txtMasqueBinOctet3.PlaceholderText = "octet n°3";
             txtMasqueBinOctet3.Size = new Size(80, 23);
             txtMasqueBinOctet3.TabIndex = 14;
-            txtMasqueBinOctet3.Tag = "3";
+            txtMasqueBinOctet3.Tag = "MSQ3";
+            txtMasqueBinOctet3.Leave += txtMasqueBinOctet_Leave;
             // 
             // txtMasqueBinOctet2
             // 
@@ -210,7 +213,8 @@
             txtMasqueBinOctet2.PlaceholderText = "octet n°2";
             txtMasqueBinOctet2.Size = new Size(80, 23);
             txtMasqueBinOctet2.TabIndex = 13;
-            txtMasqueBinOctet2.Tag = "2";
+            txtMasqueBinOctet2.Tag = "MSQ2";
+            txtMasqueBinOctet2.Leave += txtMasqueBinOctet_Leave;
             // 
             // lblMasqueBinPoint1
             // 
@@ -240,7 +244,8 @@
             txtMasqueBinOctet1.PlaceholderText = "octet n°1";
             txtMasqueBinOctet1.Size = new Size(80, 23);
             txtMasqueBinOctet1.TabIndex = 12;
-            txtMasqueBinOctet1.Tag = "1";
+            txtMasqueBinOctet1.Tag = "MSQ1";
+            txtMasqueBinOctet1.Leave += txtMasqueBinOctet_Leave;
             // 
             // txtMasqueDecOctet4
             // 
@@ -252,7 +257,8 @@
             txtMasqueDecOctet4.PlaceholderText = "octet n°4";
             txtMasqueDecOctet4.Size = new Size(80, 23);
             txtMasqueDecOctet4.TabIndex = 11;
-            txtMasqueDecOctet4.Tag = "4";
+            txtMasqueDecOctet4.Tag = "MSQ4";
+            txtMasqueDecOctet4.Leave += txtMasqueDecOctet_Leave;
             // 
             // lblMasqueDecPoint3
             // 
@@ -282,7 +288,8 @@
             txtMasqueDecOctet3.PlaceholderText = "octet n°3";
             txtMasqueDecOctet3.Size = new Size(80, 23);
             txtMasqueDecOctet3.TabIndex = 10;
-            txtMasqueDecOctet3.Tag = "3";
+            txtMasqueDecOctet3.Tag = "MSQ3";
+            txtMasqueDecOctet3.Leave += txtMasqueDecOctet_Leave;
             // 
             // txtMasqueDecOctet2
             // 
@@ -294,7 +301,8 @@
             txtMasqueDecOctet2.PlaceholderText = "octet n°2";
             txtMasqueDecOctet2.Size = new Size(80, 23);
             txtMasqueDecOctet2.TabIndex = 9;
-            txtMasqueDecOctet2.Tag = "2";
+            txtMasqueDecOctet2.Tag = "MSQ2";
+            txtMasqueDecOctet2.Leave += txtMasqueDecOctet_Leave;
             // 
             // lblMasqueDecPoint1
             // 
@@ -324,7 +332,8 @@
             txtMasqueDecOctet1.PlaceholderText = "octet n°1";
             txtMasqueDecOctet1.Size = new Size(80, 23);
             txtMasqueDecOctet1.TabIndex = 8;
-            txtMasqueDecOctet1.Tag = "1";
+            txtMasqueDecOctet1.Tag = "MSQ1";
+            txtMasqueDecOctet1.Leave += txtMasqueDecOctet_Leave;
             // 
             // lblMasque
             // 
@@ -347,6 +356,8 @@
             txtMasqueCIDR.PlaceholderText = "CIDR";
             txtMasqueCIDR.Size = new Size(38, 23);
             txtMasqueCIDR.TabIndex = 16;
+            txtMasqueCIDR.Tag = "CIDR";
+            txtMasqueCIDR.Leave += txtMasqueCIDR_Leave;
             // 
             // txtIPBinOctet4
             // 
@@ -358,7 +369,7 @@
             txtIPBinOctet4.PlaceholderText = "octet n°4";
             txtIPBinOctet4.Size = new Size(80, 23);
             txtIPBinOctet4.TabIndex = 7;
-            txtIPBinOctet4.Tag = "4";
+            txtIPBinOctet4.Tag = "IP4";
             txtIPBinOctet4.Leave += txtIPBinOctet_Leave;
             // 
             // lblIPBinPoint3
@@ -389,7 +400,7 @@
             txtIPBinOctet3.PlaceholderText = "octet n°3";
             txtIPBinOctet3.Size = new Size(80, 23);
             txtIPBinOctet3.TabIndex = 6;
-            txtIPBinOctet3.Tag = "3";
+            txtIPBinOctet3.Tag = "IP3";
             txtIPBinOctet3.Leave += txtIPBinOctet_Leave;
             // 
             // txtIPBinOctet2
@@ -402,7 +413,7 @@
             txtIPBinOctet2.PlaceholderText = "octet n°2";
             txtIPBinOctet2.Size = new Size(80, 23);
             txtIPBinOctet2.TabIndex = 5;
-            txtIPBinOctet2.Tag = "2";
+            txtIPBinOctet2.Tag = "IP2";
             txtIPBinOctet2.Leave += txtIPBinOctet_Leave;
             // 
             // lblIPBinPoint1
@@ -433,7 +444,7 @@
             txtIPBinOctet1.PlaceholderText = "octet n°1";
             txtIPBinOctet1.Size = new Size(80, 23);
             txtIPBinOctet1.TabIndex = 4;
-            txtIPBinOctet1.Tag = "1";
+            txtIPBinOctet1.Tag = "IP1";
             txtIPBinOctet1.Leave += txtIPBinOctet_Leave;
             // 
             // txtIPDecOctet4
@@ -446,7 +457,7 @@
             txtIPDecOctet4.PlaceholderText = "octet n°4";
             txtIPDecOctet4.Size = new Size(80, 23);
             txtIPDecOctet4.TabIndex = 3;
-            txtIPDecOctet4.Tag = "4";
+            txtIPDecOctet4.Tag = "IP4";
             txtIPDecOctet4.Leave += txtIPDecOctet_Leave;
             // 
             // lblIPDecPoint3
@@ -477,7 +488,7 @@
             txtIPDecOctet3.PlaceholderText = "octet n°3";
             txtIPDecOctet3.Size = new Size(80, 23);
             txtIPDecOctet3.TabIndex = 2;
-            txtIPDecOctet3.Tag = "3";
+            txtIPDecOctet3.Tag = "IP3";
             txtIPDecOctet3.Leave += txtIPDecOctet_Leave;
             // 
             // txtIPDecOctet2
@@ -490,7 +501,7 @@
             txtIPDecOctet2.PlaceholderText = "octet n°2";
             txtIPDecOctet2.Size = new Size(80, 23);
             txtIPDecOctet2.TabIndex = 1;
-            txtIPDecOctet2.Tag = "2";
+            txtIPDecOctet2.Tag = "IP2";
             txtIPDecOctet2.Leave += txtIPDecOctet_Leave;
             // 
             // lblIPDecPoint1
@@ -532,7 +543,7 @@
             txtIPDecOctet1.PlaceholderText = "octet n°1";
             txtIPDecOctet1.Size = new Size(80, 23);
             txtIPDecOctet1.TabIndex = 0;
-            txtIPDecOctet1.Tag = "1";
+            txtIPDecOctet1.Tag = "IP1";
             txtIPDecOctet1.Leave += txtIPDecOctet_Leave;
             // 
             // pnlResultat

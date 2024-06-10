@@ -221,8 +221,32 @@
             }
             if (CIDR == 0)
             {
-                CIDR = CalculerCIDR(masquebin);
+                CalculerCIDR();
             }
+        }
+
+        public void UpdateAdresse()
+        {
+            adresse[0] = adrOctet1;
+            adressebin[0] = adrBinaire1;
+            adresse[1] = adrOctet2;
+            adressebin[1] = adrBinaire2;
+            adresse[2] = adrOctet3;
+            adressebin[2] = adrBinaire3;
+            adresse[3] = adrOctet4;
+            adressebin[3] = adrBinaire4;
+        }
+
+        public void UpdateMasque()
+        {
+            masque[0] = msqOctet1;
+            masquebin[0] = msqBinaire1;
+            masque[1] = msqOctet2;
+            masquebin[1] = msqBinaire2;
+            masque[2] = msqOctet3;
+            masquebin[2] = msqBinaire3;
+            masque[3] = msqOctet4;
+            masquebin[3] = msqBinaire4;
         }
 
         public void ConversionCIDR(uint CIDR)
@@ -232,22 +256,28 @@
             msqBinaire2 = binaire.Substring(8, 8);
             msqBinaire3 = binaire.Substring(16, 8);
             msqBinaire4 = binaire.Substring(24, 8);
+            msqOctet1 = Convert.ToUInt32(msqBinaire1, 2);
+            msqOctet2 = Convert.ToUInt32(msqBinaire2, 2);
+            msqOctet3 = Convert.ToUInt32(msqBinaire3, 2);
+            msqOctet4 = Convert.ToUInt32(msqBinaire4, 2);
         }
 
-        public uint CalculerCIDR(string[] masquebin)
+        public void CalculerCIDR()
         {
-            uint cidr = 0;
+            CIDR = 0;
             foreach (string octet in masquebin)
             {
-                foreach (char bit in octet)
+                if (octet != null) 
                 {
-                    if (bit == '1')
+                    foreach (char bit in octet)
                     {
-                        cidr++;
+                        if (bit == '1')
+                        {
+                            CIDR++;
+                        }
                     }
                 }
             }
-            return cidr;
         }
 
         public bool VerificationMasque(string[] masquebin)
@@ -313,6 +343,10 @@
 
         public Reseau()
         {
+            adresse = new uint[NbOctet];
+            adressebin = new string[NbOctet];
+            masque = new uint[NbOctet];
+            masquebin = new string[NbOctet];
         }
 
         public void AffichageReseau()
